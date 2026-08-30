@@ -32,6 +32,15 @@ export const defaultMatchSelectors: SelectorConfig[] = [
     match: "file:///*.mermaid",
     selector: "body > pre",
   },
+  {
+    // GitHub raw 文件（.mmd/.mermaid），Chrome 匹配模式会忽略 ?token 等查询参数
+    match: "*://raw.githubusercontent.com/*.mmd",
+    selector: "body > pre",
+  },
+  {
+    match: "*://raw.githubusercontent.com/*.mermaid",
+    selector: "body > pre",
+  },
 ];
 
 export const defaultDownloadSelectors: SelectorConfig[] = [
