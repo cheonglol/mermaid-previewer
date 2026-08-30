@@ -41,6 +41,15 @@ export const defaultMatchSelectors: SelectorConfig[] = [
     match: "*://raw.githubusercontent.com/*.mermaid",
     selector: "body > pre",
   },
+  {
+    // GitHub blob 页面（.mmd/.mermaid），用会话 cookie 认证，无需 token
+    match: "*://github.com/*/blob/*.mmd",
+    selector: "[data-testid='code-lines']",
+  },
+  {
+    match: "*://github.com/*/blob/*.mermaid",
+    selector: "[data-testid='code-lines']",
+  },
 ];
 
 export const defaultDownloadSelectors: SelectorConfig[] = [
